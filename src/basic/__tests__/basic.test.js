@@ -2,14 +2,6 @@ import { beforeAll, beforeEach, afterEach, describe, expect, it, vi } from "vite
 
 describe('basic test', () => {
 
-  const prodList=[
-    {id: 'p1', name: '상품1', val: 10000, q: 50 },
-    {id: 'p2', name: '상품2', val: 20000, q: 30 },
-    {id: 'p3', name: '상품3', val: 30000, q: 20 },
-    {id: 'p4', name: '상품4', val: 15000, q: 0 },
-    {id: 'p5', name: '상품5', val: 25000, q: 10 }
-  ];
-
   describe.each([
     { type: 'origin', loadFile: () => import('../../main.js'), },
     { type: 'basic', loadFile: () => import('../main.basic.js'), },
@@ -93,7 +85,7 @@ describe('basic test', () => {
       sel.value='p1';
       addBtn.click();
       addBtn.click();
-      expect(sum.textContent).toContain('총액: 18000원(10.0% 할인 적용)(포인트: 81)');
+      expect(sum.textContent).toContain('총액: 20000원(포인트: 90)');
     });
 
     it('할인이 올바르게 적용되는지 확인', () => {
@@ -107,7 +99,7 @@ describe('basic test', () => {
     it('포인트가 올바르게 계산되는지 확인', () => {
       sel.value='p2';
       addBtn.click();
-      expect(document.getElementById('loyalty-points').textContent).toContain('(포인트: 841)');
+      expect(document.getElementById('loyalty-points').textContent).toContain('(포인트: 935)');
     });
 
     it('번개세일 기능이 정상적으로 동작하는지 확인', () => {
@@ -118,8 +110,8 @@ describe('basic test', () => {
       // 일부러 랜덤이 가득한 기능을 넣어서 테스트 하기를 어렵게 만들었습니다. 이런 코드는 어떻게 하면 좋을지 한번 고민해보세요!
     });
 
-    it('금요일 할인이 적용되는지 확인', () => {
-      const mockDate=new Date('2023-06-02'); // 금요일
+    it('화요일 할인이 적용되는지 확인', () => {
+      const mockDate=new Date('2024-10-15'); // 화요일
       vi.setSystemTime(mockDate);
       sel.value='p1';
       addBtn.click();

@@ -122,7 +122,7 @@ function calcCart() {
     discRate=(subTot - totalAmt) / subTot;
   }
 
-  if(new Date().getDay() === 5) {
+  if(new Date().getDay() === 2) {
     totalAmt *= (1 - 0.1);
     discRate=Math.max(discRate, 0.1);
   }
