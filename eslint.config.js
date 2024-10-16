@@ -10,6 +10,11 @@ export default [
         ...globals.browser, // 브라우저 환경
         ...globals.node // Node.js 환경 추가
       }
+    },
+    rules: {
+      'no-unused-vars': 'warn', // 사용하지 않는 변수에 대한 경고
+      'no-console': 'off' // console.log 사용 허용
+      // 추가적인 규칙 설정 가능
     }
   },
   pluginJs.configs.recommended,
