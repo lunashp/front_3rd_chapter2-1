@@ -1,9 +1,9 @@
 import React from 'react';
 import { CartItem } from './CartItem';
-import { useCartContext } from './CartContext';
+import { useCartContext } from '../context/CartContext';
 
 export const Cart: React.FC = () => {
-  const { cartItems, totalAmount, itemCount, bonusPoints } = useCartContext(); // useCart 대신 useCartContext 사용
+  const { cartItems, totalAmount, itemCount, bonusPoints } = useCartContext();
 
   return (
     <div>

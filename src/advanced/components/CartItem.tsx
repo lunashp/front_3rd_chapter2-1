@@ -1,7 +1,7 @@
 import React from 'react';
 import { Product } from '../types';
-import { useCartContext } from './CartContext';
 import { useProductList } from '../hooks/useProductList';
+import { useCartContext } from '../context/CartContext';
 
 interface CartItemProps {
   product: Product;
@@ -12,7 +12,6 @@ export const CartItem: React.FC<CartItemProps> = ({ product, quantity }) => {
   const { updateQuantity, removeItem } = useCartContext();
   const { increaseStock, decreaseStock, productList } = useProductList();
 
-  // 내부에서 수량을 업데이트하는 함수
   const handleUpdateQuantity = (amount: number) => {
     updateQuantity(product.id, amount, increaseStock, decreaseStock, productList);
   };

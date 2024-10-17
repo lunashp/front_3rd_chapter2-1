@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductSelect } from './components/ProductSelect';
 import { Cart } from './components/Cart';
 import { StockInfo } from './components/StockInfo';
-import { CartProvider } from './components/CartContext';
+import { CartProvider } from './context/CartContext';
 
 const App: React.FC = () => {
   return (

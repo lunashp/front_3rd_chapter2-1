@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useProductList } from '../hooks/useProductList';
-import { useCartContext } from './CartContext';
+import { useCartContext } from '../context/CartContext';
 
 export const ProductSelect: React.FC = () => {
   const { productList, decreaseStock } = useProductList();
