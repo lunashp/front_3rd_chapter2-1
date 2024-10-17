@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true, // CommonJS 모듈과의 호환성
+    "skipLibCheck": true, // 라이브러리 체크 건너뛰기
+    "moduleResolution": "node",
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src/**/*" // TypeScript 파일이 포함될 경로
+  ]
+}
